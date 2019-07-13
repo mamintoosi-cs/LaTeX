@@ -1,0 +1,104 @@
+\documentclass[tikz, border=10pt]{standalone}
+
+\usepackage{verbatim}
+
+\begin{comment}
+:Title: MESIF protocol
+:Tags: Diagrams;Block diagrams;Computer science
+:Author: Marek Fiser
+:Slug: mesif
+
+A diagram describing the MESIF protocol: http://en.wikipedia.org/wiki/MESIF_protocol
+\end{comment}
+\usetikzlibrary{arrows}
+\begin{document}
+
+
+\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=3cm,line width=5pt,
+  thick,main node/.style={circle,fill=black!40,draw,
+  font=\sffamily\Large\bfseries,minimum size=10mm}]
+
+
+
+
+ \node[main node] (B) [right of=A,fill=white!20] {$y_1$};
+ \node[main node] (S) [right of=B,fill=white!20] {$y_2$ };
+ \node[main node,draw=white] (M) [right of=S][fill=white] {\ldots\ldots\ldots };
+ \node[main node] (V) [right of=M,fill=white!20] {$y_m-1$};
+ \node[main node](H) [right of=V,fill=white!20] {$y_m-1$};
+
+ 
+
+\node[main node](C)[below of=A,fill=white!20]{};
+\node[main node](D)[below of=B,fill=white!20]{};
+\node[main node](F)[below of=S,fill=white!20]{};
+\node[main node,draw=white] (N) [below of=M][fill=white] {\ldots\ldots\ldots };
+\node[main node](E)[below of=V,fill=white!20]{};
+
+
+
+
+\node[main node](G)[below of=C,fill=white!20]{};
+\node[main node](J)[below of=D,fill=white!20]{};
+\node[main node](K)[below of=F,fill=white!20]{};
+\node[main node](L)[below of=E,fill=white!20]{};
+
+\node[main node,draw=white](P)[below of=G,fill=white!40]{$x_0$};
+\node[main node,draw=white](U)[below of=J,fill=white!40]{$x_1$};
+\node[main node,draw=white](T)[below of=K,fill=white!40]{$x_2$};
+\node[main node,draw=white](W)[below of=L,fill=white!40]{$x_3$};
+
+
+
+\path[every node/.style={font=\sffamily\small,
+  		fill=black,inner sep=1pt}]
+\path (C) edge  (B);
+\path (D) edge ( S);
+\path (F) edge  (V);
+\path (E) edge  (H);
+\path (D) edge [bend left=30]  (E);
+\path (C) edge [bend left=40]  (E);
+\path (F) edge [bend right=40]  (E);
+\path (E) edge [bend left=50]  (E);
+\path (E) edge [loop below]  (E);
+\path (F) edge [loop below]  F);
+\path (D) edge [loop below]  (D);
+\path (C) edge [loop below]  (C);
+\path(C) edge  [bend right=30](D);
+\path(C) edge  [bend right=30](F);
+\path(F) edge  [bend right=30](D)
+
+\path (G) edge   (C);
+\path (D) edge  (J);
+\path (F) edge   (K);
+\path (E) edge   (L);
+\path (G) edge   (C);
+\path (P) edge   (G);
+\path (P) edge   (J);
+\path (P) edge   (K);
+\path (P) edge   (L);
+
+\path (U) edge   (G);
+\path (U) edge   (J);
+\path (U) edge   (K);
+\path (U) edge   (L);
+
+\path (T) edge   (G);
+\path (T) edge   (J);
+\path (T) edge   (K);
+\path (T) edge   (L);
+
+\path (W) edge   (G);
+\path (W) edge   (J);
+\path (W) edge   (K);
+\path (W) edge   (L);
+
+
+
+
+
+
+
+ 
+\end{tikzpicture}
+\end{document}
