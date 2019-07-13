@@ -1,0 +1,71 @@
+\documentclass[crop, tikz]{standalone}
+\usepackage {tikz}
+
+
+\usetikzlibrary{positioning}
+
+\tikzstyle{inputNode}=[draw,circle,minimum size=10pt,inner sep=0pt]
+\tikzstyle{stateTransition}=[-stealth, thick]
+
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+
+\begin{document}
+\begin{tikzpicture}
+
+%**************************************'NODES******************************************
+	\node[draw,circle,minimum size=15pt,inner sep=0pt] (x) at (0,0) {};
+%                                                       *******************************
+	\node[inputNode] (x1) at (-2, 1.5) {$\tiny x_1$};
+	\node[inputNode] (x2) at (-2, 0.75) {$\tiny x_2$};
+	 \node  at (-2, 0) {$\vdots$};
+	\node[inputNode] (xn) at (-2, -0.75) {$\tiny x_n$};
+
+%****************************************INDEX****************************************
+	\draw[stateTransition] (x1) to[out=50,in=120] node [midway, sloped, above] {$w_1$} (x);
+	\draw[stateTransition] (x2) to[out=50,in=150] node [midway, sloped, above] {$w_2$} (x);
+	\draw[stateTransition] (xn) to[out=50,in=180] node [midway, sloped, above] {$w_n$} (x);
+	\draw[stateTransition] (x) -- (3,0) node [midway,above] {y};
+	\draw --(4,0) node[right ]{$y=f(\sum\limits_{i=0}^{n-1}(w_i x_i)-\theta)$};
+	\draw --(13,0) node[right ]{$ $};
+	\draw-- (-8,0) node [midway,above] {INPUT};
+	\draw-- (3,0) node [midway,below] {OUTPUT};
+%******************************************FIGURE1**************************************
+	\draw [xshift=-4cm,yshift=-5cm](0,0) -- (1.5,0) node [below]{$\sigma$} ;
+	\draw [xshift=-4cm,yshift=-5cm](0,0) -- (0,1.5) node [above]{$f_t(\sigma)$};
+	\draw [xshift=-4cm,yshift=-5cm](0,0) -- (0,-1.5);
+	\draw [xshift=-4cm,yshift=-5cm](0,0) -- (-1.5,0);
+	\draw [xshift=-4cm,yshift=-5cm] (0.2,0) node [below]{$0$};
+	\draw [xshift=-4cm,yshift=-5cm] (-0.2,1) node [below]{$+1$};
+	\draw [xshift=-4cm,yshift=-5cm] (-0.2,-1) node [below]{$-1$};
+%                                                       *******************************
+	\draw[xshift=-4cm,yshift=-5cm,thick] (1,1) -- (0,1) -- (0,-1) -- (-1,-1);
+	\draw --(-5,-7) node[right ]{$HARD LIMITER $};
+%*****************************************FIGURE2***************************************
+	\draw [xshift=3cm,yshift=-5cm](0,0) -- (1.5,0) node [below]{$\sigma$};
+	\draw [xshift=3cm,yshift=-5cm](0,0) -- (0,1.5) node [above]{$f_t(\sigma)$};
+	\draw [xshift=3cm,yshift=-5cm](0,0) -- (0,-1.5);
+	\draw [xshift=3cm,yshift=-5cm](0.2,0) node [below]{$0$};
+	\draw [xshift=3cm,yshift=-5cm](-0.2,1) node [below]{$+1$};
+	\draw [xshift=3cm,yshift=-5cm](-0.2,-1) node [below]{$-1$};
+	\draw [xshift=3cm,yshift=-5cm](0,0) -- (-1.5,0);
+%                                                       *******************************
+	\draw[xshift=3cm,yshift=-5cm,thick] (1,1) -- (0.5,1) -- (0,0) -- (-1,0);
+	\draw --(1.5,-7) node[right ]{$THRESHOLD LOCK $};
+%*****************************************FIGURE3***************************************
+	\draw [xshift=9cm,yshift=-5cm](0,0) -- (1.5,0) node [below]{$\sigma$};
+	\draw [xshift=9cm,yshift=-5cm](0,0) -- (0,1.5) node [above]{$f_t(\sigma)$};
+	\draw [xshift=9cm,yshift=-5cm](0,0) -- (0,-1.5);
+	\draw [xshift=9cm,yshift=-5cm](0,0) -- (-1.5,0);
+	\draw [xshift=9cm,yshift=-5cm](0.2,0) node [below]{$0$};
+	\draw [xshift=9cm,yshift=-5cm](-0.2,1) node [below]{$+1$};
+	\draw [xshift=9cm,yshift=-5cm](-0.2,-1) node [below]{$-1$};
+%                                                       *******************************
+	\draw[xshift=9cm,yshift=-5cm,thick,scale=1,domain=-2:2,smooth,variable=\x] plot ({\x},{1/(1+exp(-\x+0.5))});
+	\draw --(8,-7) node[right ]{$SICNOID $};
+%*****************************************FIGURE3***************************************
+	\draw --(0,-8) node[right ]{$ $};
+
+\end{tikzpicture}
+\end{document}

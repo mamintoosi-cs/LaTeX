@@ -1,0 +1,48 @@
+\documentclass{standalone} 
+\usepackage{tikz}
+
+\usetikzlibrary{trees}
+
+\usepackage{xepersian}
+\settextfont{XB Niloofar}
+
+
+\begin{document}
+\begin{tikzpicture}[level distance=1.5cm,
+  level 1/.style={sibling distance=16cm},
+  level 2/.style={sibling distance=8cm},
+  level 3/.style={sibling distance=4cm}]
+
+\begin{RTL}
+  \node {\rl{دسته بندی کننده های\\ شبکه عصبی برای الگوهای ثابت}}
+	child{node{\rl{با ورودی باینری}}
+	    child {node {\rl{با سرپرستی}}
+	      child {node {\rl{شبکه هاپفیلد}}}
+	      child {node {\rl{شبکه همینگ}}
+		child{node {\rl{دسته بندی کننده بهینه}}}
+		}
+	}
+   	child {node {\rl{بدون سرپرستی}}
+  	  child {node {\rl{دسته بندی کننده \\کارپنتر/گوتنبرگ}}
+ 	     child {node {\rl{الگوریتم خوشه بندی هدایت کننده}}}
+	    }
+   	  }
+}
+	child{node {\rl{با ورودی آنالوگ}}
+		child{node {\rl{با سرپرستی}}
+			child{node {\rl{پرسپترون}}
+				child{node {\rl{دسته بندی کننده گوسی}}}
+				}
+			child{node {\rl{پرسپترون چندلایه}}
+				child{node {\rl{نزدیکترین \lr{-k}همسایه}}}
+				}
+		}
+		child{node {\rl{بدون سرپرستی}}
+			child{node {\rl{نقشه‌های خودسازمان‌دهنده کوهونن}}
+				child{node {\rl{الگوریتم خوشه بندی \lr{-k}میانگین}}}
+				}
+			}
+	};
+\end{RTL}
+\end{tikzpicture}
+\end{document}
