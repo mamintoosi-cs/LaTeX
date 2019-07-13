@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div id='container'></div>
+<button onclick='svgSnapshot()'>Export SVG</button>
+<a href='javascript:void(0)' id='dlbtn'><button>Export STL</button></a>
+<div style='display: none;' id='svg'></div>
+<img id='svg2'></img>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/92/three.min.js'></script>
+<script src='https://cdn.rawgit.com/mrdoob/three.js/r92/examples/js/loaders/ColladaLoader.js'></script>
+<script src='https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js'></script>
+<script src='https://cdn.rawgit.com/mrdoob/three.js/r92/examples/js/renderers/SVGRenderer.js'></script>
+<script src='https://cdn.rawgit.com/mrdoob/three.js/r92/examples/js/renderers/Projector.js'></script>
+<script src='https://cdn.rawgit.com/mrdoob/three.js/r92/examples/js/exporters/STLExporter.js'></script>
+<script>
+var container, clock;
+var camera, scene, renderer, ggbExport, group;
+init();
+animate();
+function init() {
+container = document.getElementById( 'container' );
+scene = new THREE.Scene();
+clock = new THREE.Clock();
+var colladaDataURI = 'data:text/plain;charset=utf-8,<?xml version="1.0" encoding="utf-8"?><COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.5"><asset><contributor><authoring_tool>GeoGebra</authoring_tool></contributor><unit name="centimeter" meter="0.01"/><up_axis>Z_UP</up_axis></asset><library_lights><light id="L_dir" name="Directional"><technique_common><directional><color sid="color">1 1 1</color></directional></technique_common></light><light id="L_amb" name="Ambient"><technique_common><ambient><color sid="color">0.5 0.5 0.5</color></ambient></technique_common></light></library_lights><library_geometries><geometry id="f-mesh" name="f"><mesh><source id="f-mesh-positions"><float_array id="f-mesh-positions-array" count="48">0 50.4095166015625 0.05 -0.014530626535415649 50.441748046875 0.03535533905029297 -0.02054940938949585 50.4551025390625 3.0616169991140215e-18 -0.014530626535415649 50.441748046875 -0.03535533905029297 -2.516576708544297e-18 50.4095166015625 -0.05 0.014530626535415649 50.377285156250004 -0.03535533905029297 0.02054940938949585 50.363935546875 -9.184850467946474e-18 0.014530626535415649 50.377285156250004 0.03535533905029297 110 100 0.05 109.98546875 100.0322265625 0.03535533905029297 109.979453125 100.04558593750001 3.0616169991140215e-18 109.98546875 100.0322265625 -0.03535533905029297 110 100 -0.05 110.01453125 99.9677734375 -0.03535533905029297 110.02054687500001 99.9544140625 -9.184850467946474e-18 110.01453125 99.9677734375 0.03535533905029297</float_array><technique_common><accessor source="

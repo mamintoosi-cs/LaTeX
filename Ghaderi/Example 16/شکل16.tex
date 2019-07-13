@@ -1,0 +1,39 @@
+\documentclass[crop, tikz]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+ 
+\begin{document}
+\begin{tikzpicture}
+
+%------------------------------------------------------------------------
+\draw (0,0) rectangle (8,8);
+\draw [yshift=250][thick,dashed] (2,8)  ..  controls (4,3.5) and (5,7) .. (5,0);;
+\draw[xshift=50,yshift=355] node [left]{$A$};
+\draw[xshift=200,yshift=355] node [left]{$B$};
+\draw[xshift=200,yshift=400] node [left]{$t=150$};
+%------------------------------------------------------------------------
+\draw [xshift=250](0,0) rectangle (8,8);
+\draw[xshift=250,yshift=250][thick,dashed] (2,8) ..  controls (2,3.5) and (6.5,7) .. (5,0);;
+\draw[xshift=250,yshift=250][thick,dashed](0,6) .. controls (4,4) and (0,2) .. (0,2) ;
+\draw[xshift=375,yshift=105] node [left]{$A$};
+\draw[xshift=450,yshift=105] node [left]{$B$};
+\draw[xshift=450,yshift=195] node [left]{$t=100$};
+%------------------------------------------------------------------------
+\draw [xshift=250,yshift=250](0,0) rectangle (8,8);
+\draw [xshift=250][thick,dashed]  (4,4) ellipse (1cm and 1.5cm);;
+\draw[xshift=355,yshift=355] node [left]{$A$};
+\draw[xshift=290,yshift=355] node [left]{$B$};
+\draw[xshift=450,yshift=355] node [left]{$B$};
+\draw[xshift=450,yshift=395] node [left]{$t=100$};
+%------------------------------------------------------------------------
+\draw [yshift=250,](0,0) rectangle (8,8);
+\draw[thick,dashed] (2,8) .. controls (4,4) and (5,2) .. (5,8);
+\draw[xshift=130,yshift=155] node [left]{$A$};
+\draw[xshift=150,yshift=55] node [left]{$B$};
+\draw[xshift=200,yshift=200] node [left]{$t=150$};
+
+%------------------------------------------------------------------------
+\draw[xshift=-10,yshift=255] node [left,rotate=90]{$ -->{x_1}$};
+\draw[xshift=250,yshift=-10] node [below]{$ -->{x_0}$};
+\end{tikzpicture}
+\end{document}

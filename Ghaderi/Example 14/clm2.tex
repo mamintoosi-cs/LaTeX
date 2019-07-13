@@ -1,0 +1,49 @@
+\documentclass[crop, tikz]{standalone}
+
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+
+\usepackage{xepersian}
+\settextfont{XB Niloofar}
+
+\begin{document}
+\pagestyle{empty}
+
+\def\layersep{2.5cm}
+
+\tikzset{neuron/.style={circle,thick,fill=black!25,minimum size=17pt,inner sep=0pt},
+    input neuron/.style={neuron, draw,thick, fill=white!30},
+    hidden neuron/.style={neuron,fill=white,draw},
+    hoz/.style={rotate=-90}} 
+
+\begin{tikzpicture}
+[-,draw=black, node distance=\layersep,transform shape,rotate=90] 
+
+
+
+
+	\foreach \name / \y in {3/3}
+		\node[hidden neuron, hoz] (X"-\name) at (0,-\name){};
+
+	\foreach \name / \y in {2/2,4/4}
+		\path[xshift=-2cm]node[hidden neuron, hoz] (X'-\name) at (0,-\name) {};
+
+	\foreach \name / \y in {2/2,4/4}
+		\path[xshift=-4cm]node[hoz, hoz] (X-\name) at (0,-\name) {};
+
+
+ 
+	\foreach \source in {2,4}
+ 	       \foreach \dest in {3}
+	            \path (X'-\source.north) edge (X"-\dest.south);   
+
+	\foreach \source in {2,4}
+ 	       \foreach \dest in {2,4}
+	            \path (X-\source.north) edge (X'-\dest.south);   
+
+
+\end{tikzpicture}
+
+\end{document}

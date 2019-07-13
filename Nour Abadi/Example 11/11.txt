@@ -1,0 +1,45 @@
+\documentclass[10pt]{article}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-5.146939978230508,1.1534708535569824) rectangle (8.035792749388188,6.9979401789743365);
+\draw [->,line width=2pt] (-4,3) -- (-4,4);
+\draw [->,line width=2pt] (0,3) -- (0,4);
+\draw [->,line width=2pt] (4,3) -- (4,4);
+\draw [->,line width=2pt] (-4,4) -- (-2,6);
+\draw [->,line width=2pt] (-4,5) -- (-4,4);
+\draw [->,line width=2pt] (-2,6) -- (2,6);
+\draw [->,line width=2pt] (0,7) -- (-2,6);
+\draw [->,line width=2pt] (0,4) -- (-2,6);
+\draw [->,line width=2pt] (-1.42,4.5) -- (0,4);
+\draw [->,line width=2pt] (0,4) -- (2,6);
+\draw [->,line width=2pt] (1.4,4.48) -- (0,4);
+\draw [->,line width=2pt] (3.94,5.22) -- (4,4);
+\draw [->,line width=2pt] (4,4) -- (2,6);
+\draw [->,line width=2pt] (4,4) -- (-2,6);
+\draw [->,line width=2pt] (0.02,4.54) -- (4,4);
+\draw [line width=2pt] (-2,6)-- (-4,5);
+\draw [line width=2pt] (-2,6)-- (-1.42,4.5);
+\draw [line width=2pt] (-1.694,5.898)-- (0.02,4.54);
+\draw [line width=2pt] (2,6)-- (1.3821037253469683,4.473864134404676);
+\draw [line width=2pt] (2,6)-- (3.94,5.22);
+\draw [line width=2pt] (2,6)-- (0,7);
+\draw (-4.288008384079715,3.1140755793359682) node[anchor=north west] {$x_{0}$};
+\draw (-0.3854713584815455,3.1887652831751674) node[anchor=north west] {$x_{1}$};
+\draw (3.7037899267146224,3.1140755793359682) node[anchor=north west] {$x_{2}$};
+\draw (-2.2527139544615307,6.829888345336139) node[anchor=north west] {$y_{0}$};
+\draw (1.6684954970964383,6.923250475135138) node[anchor=north west] {$y_{1}$};
+\begin{scriptsize}
+\draw [color=rvwvcq] (-2,6) circle (4pt);
+\draw [color=rvwvcq] (2,6) circle (4pt);
+\draw [color=rvwvcq] (0,4) circle (4pt);
+\draw [color=rvwvcq] (-4,4) circle (4pt);
+\draw [color=rvwvcq] (4,4) circle (4pt);
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

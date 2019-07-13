@@ -1,0 +1,103 @@
+\documentclass[10pt]{article}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+xmin=-72.99756590875188,
+xmax=203.55504365807437,
+ymin=-78.25838551361403,
+ymax=110.11046741775314,
+xtick={-60,-40,...,200},
+ytick={-60,-40,...,100},]
+\clip(-72.99756590875188,-78.25838551361403) rectangle (203.55504365807437,110.11046741775314);
+\draw [line width=2pt] (0,50.40951865679757)-- (110,100);
+\draw [line width=2pt] (0,70)-- (109.63179667396389,-8.480613449738675);
+\draw [line width=2pt] (0,60)-- (110,10);
+\draw [line width=2pt] (0,55.11886881400247)-- (108.34824631316302,49.96828126475765);
+\draw (77.54097722337902,61.84421008769369) node[anchor=north west] {+};
+\draw (61.88705592714357,66.01858910002316) node[anchor=north west] {\textbf{+}};
+\draw (61.626157238872985,71.49746155370558) node[anchor=north west] {\textbf{+}};
+\draw (68.14862444563775,67.32308254137611) node[anchor=north west] {\textbf{+}};
+\draw (72.84480083450839,61.061514022881916) node[anchor=north west] {\textbf{+}};
+\draw (77.80187591164962,67.32308254137611) node[anchor=north west] {\textbf{+}};
+\draw (63.45244805676712,60.53971664634073) node[anchor=north west] {\textbf{+}};
+\draw (80.9326601708967,57.408932387093635) node[anchor=north west] {\textbf{+}};
+\draw (68.93132051044952,54.53904681611712) node[anchor=north west] {\textbf{+}};
+\draw (77.80187591164962,55.06084419265831) node[anchor=north west] {\textbf{+}};
+\draw (63.9742454333083,47.23388354454056) node[anchor=north west] {\textbf{+}};
+\draw (77.80187591164962,58.97432451671718) node[anchor=north west] {\textbf{+}};
+\draw (65.53963756293184,51.147363868599435) node[anchor=north west] {\textbf{+}};
+\draw (67.10502969255539,42.27680846739931) node[anchor=north west] {\textbf{+}};
+\draw (71.80120608142603,42.27680846739931) node[anchor=north west] {\textbf{+}};
+\draw (71.80120608142603,56.88713501055245) node[anchor=north west] {\textbf{+}};
+\draw (74.41019296413194,64.97499434694079) node[anchor=north west] {\textbf{+}};
+\draw (79.10636935300256,60.53971664634073) node[anchor=north west] {\textbf{+}};
+\draw (84.06344443014379,69.14937335927026) node[anchor=north west] {\textbf{+}};
+\draw (80.41086279435552,63.67050090558783) node[anchor=north west] {\textbf{+}};
+\draw (85.10703918322615,63.93139959385842) node[anchor=north west] {\textbf{+}};
+\draw (83.28074836533202,61.583311399423096) node[anchor=north west] {\textbf{+}};
+\draw (81.97625492397907,66.54038647656434) node[anchor=north west] {\textbf{+}};
+\draw (75.4537877172143,63.40960221731724) node[anchor=north west] {\textbf{+}};
+\draw (68.14862444563775,60.80061533461132) node[anchor=north west] {\textbf{+}};
+\draw (84.06344443014379,60.01791926979955) node[anchor=north west] {\textbf{+}};
+\draw (80.9326601708967,57.408932387093635) node[anchor=north west] {\textbf{+}};
+\draw (87.19422868939088,62.887804840776056) node[anchor=north west] {\textbf{+}};
+\draw (73.62749689932016,54.278148127846535) node[anchor=north west] {\textbf{+}};
+\draw (86.41153262457911,66.27948778829375) node[anchor=north west] {\textbf{+}};
+\draw (84.84614049495556,58.97432451671718) node[anchor=north west] {\textbf{+}};
+\draw (80.9326601708967,57.408932387093635) node[anchor=north west] {\textbf{+}};
+\draw (82.23715361224966,66.54038647656434) node[anchor=north west] {\textbf{+}};
+\draw (84.32434311841439,55.3217428809289) node[anchor=north west] {\textbf{+}};
+\draw (87.71602606593207,56.626236322281855) node[anchor=north west] {\textbf{+}};
+\draw (87.71602606593207,61.061514022881916) node[anchor=north west] {\textbf{+}};
+\draw (86.9333300011203,70.19296811235262) node[anchor=north west] {\textbf{+}};
+\draw (88.75962081901443,64.7140956586702) node[anchor=north west] {\textbf{+}};
+\draw (89.2814181955556,59.757020581528955) node[anchor=north west] {\textbf{+}};
+\draw (88.23782344247324,67.58398122964671) node[anchor=north west] {\textbf{+}};
+\draw (17.012481544601954,34.449847819281565) node[anchor=north west] {◯};
+\draw (17.273380232872544,27.40558323597559) node[anchor=north west] {◯};
+\draw (23.274050063096134,21.144014717481394) node[anchor=north west] {◯};
+\draw (25.88303694580204,13.577952757634234) node[anchor=north west] {◯};
+\draw (26.14393563407263,21.144014717481394) node[anchor=north west] {◯};
+\draw (28.75292251677854,13.577952757634234) node[anchor=north west] {◯};
+\draw (26.14393563407263,17.49143308169311) node[anchor=north west] {◯};
+\draw (29.01382120504913,18.274129146504883) node[anchor=north west] {◯};
+\draw (21.969556621743177,17.230534393422516) node[anchor=north west] {◯};
+\draw (24.578543504449087,9.66447243357536) node[anchor=north west] {◯};
+\draw (21.708657933472587,13.577952757634234) node[anchor=north west] {◯};
+\draw (24.839442192719677,32.623557001387425) node[anchor=north west] {◯};
+\draw (27.709327763696177,27.40558323597559) node[anchor=north west] {◯};
+\draw (31.62280808775504,26.361988482893224) node[anchor=north west] {◯};
+\draw (20.143265803849044,24.0139002884579) node[anchor=north west] {◯};
+\draw (15.447089414978407,7.577282927410627) node[anchor=north west] {◯};
+\draw (37.36257922970804,9.925371121845952) node[anchor=north west] {◯};
+\draw (41.2760595537669,9.142675057034177) node[anchor=north west] {◯};
+\draw (33.44909890564917,11.751661939740094) node[anchor=north west] {◯};
+\draw (33.44909890564917,16.447838328610743) node[anchor=north west] {◯};
+\draw (31.88370677602563,19.05682521131666) node[anchor=north west] {◯};
+\draw (23.274050063096134,19.31772389958725) node[anchor=north west] {◯};
+\draw (20.925961868660814,19.05682521131666) node[anchor=north west] {◯};
+\draw (27.709327763696177,17.7523317699637) node[anchor=north west] {◯};
+\draw (23.01315137482554,11.751661939740094) node[anchor=north west] {◯};
+\draw (28.75292251677854,15.92604095206956) node[anchor=north west] {◯};
+\draw (24.056746127907903,24.796596353269674) node[anchor=north west] {◯};
+\draw (29.535618581590313,21.144014717481394) node[anchor=north west] {◯};
+\draw (18.056076297684317,18.535027834775477) node[anchor=north west] {◯};
+\draw (22.23045531001377,19.31772389958725) node[anchor=north west] {◯};
+\draw (80.9326601708967,99.1527225103883) node[anchor=north west] {t = 0};
+\draw (97.89107490848511,57.14803369882304) node[anchor=north west] {t = 2};
+\draw (93.71669589615566,30.2754688069521) node[anchor=north west] {t = 4};
+\draw (91.10770901344975,13.05615538109305) node[anchor=north west] {t = 8};
+\draw (-11.686374165163038,23.492102911916717) node[anchor=north west] {$\mathbf{x_{1}}$};
+\draw (30.057415958131493,-3.6413606682248143) node[anchor=north west] {$\mathbf{x_{2}}$};
+\draw [->,line width=2pt] (36.994655234303124,-9.915474277665133) -- (48.16762685821272,-9.915474277665133);
+\draw [->,line width=2pt] (-9.65740172167028,21.251236041661752) -- (-10,30);
+\end{axis}
+\end{tikzpicture}
+\end{document}

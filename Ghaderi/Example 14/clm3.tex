@@ -1,0 +1,41 @@
+\documentclass[crop, tikz]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{xepersian}
+\settextfont{XB Niloofar}
+
+\begin{document}
+\pagestyle{empty}
+\def\layersep{2.5cm}
+\tikzset{neuron/.style={circle,thick,fill=black!25,minimum size=17pt,inner sep=0pt},
+    input neuron/.style={neuron, draw,thick, fill=white!30},
+    hidden neuron/.style={neuron,fill=white,draw},
+    hoz/.style={rotate=-90}}   %<--- for labels
+\begin{tikzpicture}
+[-,draw=black, node distance=\layersep,transform shape,rotate=90]  %<-- rotate the NN
+
+	\foreach \name / \y in {2/2}
+		\node[hidden neuron, hoz] (I-\name) at (0,-\name){};
+
+	\foreach \name / \y in {2/2,3/3}
+		\path[xshift=-2cm]node[hidden neuron, hoz] (X"-\name) at (0,-\name) {};
+
+	\foreach \name / \y in {1/1,2/2,3/3,4/4}
+		\path[xshift=-4cm]node[hidden neuron, hoz] (X'-\name) at (0,-\name) {};
+	\foreach \name / \y in {2/2,3/3}
+		\path[xshift=-6cm]node[hoz, hoz] (X-\name) at (0,-\name) {};
+	\foreach \source in {2,3}
+ 	       \foreach \dest in {2}
+	            \path (X"-\source.north) edge (I-\dest.south);
+ 
+	\foreach \source in {1,2,3,4}
+ 	       \foreach \dest in {2,3}
+	            \path (X'-\source.north) edge (X"-\dest.south);   
+
+	\foreach \source in {2,3}
+ 	       \foreach \dest in {1,2,3,4}
+	            \path (X-\source.north) edge (X'-\dest.south);   
+
+\end{tikzpicture}
+
+\end{document}

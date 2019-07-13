@@ -1,0 +1,101 @@
+\documentclass[crop, tikz]{standalone}
+
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+
+\usepackage{xepersian}
+\settextfont{XB Niloofar}
+
+\begin{document}
+\pagestyle{empty}
+
+\def\layersep{2.5cm}
+
+\tikzset{neuron/.style={circle,thick,fill=black!25,minimum size=17pt,inner sep=0pt},
+    input neuron/.style={neuron, draw,thick, fill=white!30},
+    hidden neuron/.style={neuron,fill=white,draw},
+    hoz/.style={rotate=-90}}   %<--- for labels
+
+\begin{tikzpicture}
+[-,draw=black, node distance=\layersep,transform shape,rotate=90]  %<-- rotate the NN
+
+%________________________________\rl{رسم گره ها}__________________________________________________
+	\foreach \name / \y in {1/1,2/2,3/3,4/4,5/5}
+		\node[hidden neuron, hoz] (I-\name) at (0,-\name){};
+
+	\foreach \name / \y in {1/1,2/2,3/3,4/4,5/5}
+		\path[xshift=-2cm]node[hidden neuron, hoz] (X"-\name) at (0,-\name) {};
+
+	\foreach \name / \y in {1/1,2/2,3/3,4/4,5/5}
+		\path[xshift=-4cm]node[hidden neuron, hoz] (X'-\name) at (0,-\name) {};
+
+	\foreach \name / \y in {1/1,2/2,3/3,4/4,5/5}
+		\path[xshift=-6cm]node[hoz, hoz] (X-\name) at (0,-\name) {};
+
+%_______________________________\rl{رسم اتصالات}___________________________________________________
+	\foreach \source in {1,2,3,4,5}
+ 	       \foreach \dest in {1,2,3,4,5}
+	            \path (X"-\source.north) edge (I-\dest.south);
+ 
+	\foreach \source in {1,2,3,4,5}
+ 	       \foreach \dest in {1,2,3,4,5}
+	            \path (X'-\source.north) edge (X"-\dest.south);   
+
+	\foreach \source in {1,2,3,4,5}
+ 	       \foreach \dest in {1,2,3,4,5}
+	            \path (X-\source.north) edge (X'-\dest.south);   
+%_______________________________\rl{نوشته ها}___________________________________________________
+\begin{RTL}
+	\foreach \name / \y in {1/1,5/5}
+		\path[hoz] (I-\name) node[above=0.5cm](0,-\name) {$y_\y$};
+
+	\foreach \name / \y in {3/3}
+		\path[hoz] (I-\name) node[above=1cm](0,-\name) {\rl{خروجی}};
+
+	\foreach \name / \y in {5/5}
+		\path[hoz] (I-\name) node[right=1cm](0,-\name) {$y_l=f(\sum\limits_{l=0}^{n-1}w"_{kl} x_l"-\theta_l")\quad 0\le l \le M-1$};
+
+	\foreach \name / \y in {1/1}
+		\path[hoz] (I-\name) node[left=3cm](0,-\name) {\rl{لایه خروجی}};
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	\foreach \name / \y in {1/1}
+		\path[xshift=-7cm,hoz] node[above=0.5cm](0,-\name) {$X_\y$};
+
+	\foreach \name / \y in {5/5}
+		\path[xshift=-7cm,yshift=-155,hoz] node[above=0.5cm](0,-\name) {$X_\y$};
+
+	\foreach \name / \y in {1/1}
+		\path[xshift=-6cm,yshift=-85,hoz] node[below=1cm](0,-\name) {\rl{لایه ورودی}};
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	\foreach \name / \y in {1/1}
+		\path[xshift=-5cm,hoz] node[above=0.5cm](0,-\name) {$X'_\y$};
+
+	\foreach \name / \y in {5/5}
+		\path[xshift=-5cm,yshift=-160,hoz] node[above=0.5cm](0,-\name) {$X'_\y$};
+
+	\foreach \name / \y in {5/5}
+		\path[xshift=-5cm,yshift=-160,hoz] node[right=0.5cm](0,-\name) {$x'_j=f(\sum\limits_{j=0}^{n-1}(w_{tj} x_j)-\theta_j)\quad 0\le j \le N_t-1$};
+
+	\foreach \name / \y in {1/1}
+		\path[xshift=-4cm,hoz] node[left=2cm](0,-\name) {\rl{اولین لایه پنهان}};
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	\foreach \name / \y in {1/1}
+		\path[xshift=-3cm,hoz] node[above=0.5cm](0,-\name) {$X"_\y$};
+
+	\foreach \name / \y in {5/5}
+		\path[xshift=-3cm,yshift=-160,hoz] node[above=0.5cm](0,-\name) {$X"_\y$};
+
+	\foreach \name / \y in {5/5}
+		\path[xshift=-3cm,yshift=-160,hoz] node[right=0.5cm](0,-\name) {$x"_k=f(\sum\limits_{k=0}^{n-1}(w_{jk}' x_k')-\theta_k')\quad 0\le k \le N_t-1$};
+
+	\foreach \name / \y in {1/1}
+		\path[xshift=-2cm,hoz] node[left=2cm](0,-\name) {\rl{دومین لایه پنهان}};
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\end{RTL}
+%__________________________________________________________________________________
+\end{tikzpicture}
+% End of code
+\end{document}
